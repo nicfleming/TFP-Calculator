@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- What are some of the tags we need-->
+    <meta charset='utf-8'>
+    <title>calculator</title>
+    <!-- Do we need to link in our CSS and JavaScript?-->
+    <link rel='stylesheet' href='css/calculator.css'>
+    <script src='js/calculator.js'></script>
+  </head>
+
+  <!-- Do we need to call a function to initialize anything? -->
+  <body onload='init()'>
+    <!-- How may we want to organize our calculator elements? -->
+    <table>
+        <tr>
+            <td colspan='4' id='result'>0</td>
+        </tr>
+        <tr>
+            <td><button class='number' onclick=digitPressed(7)>7</button></td>
+            <td><button class='number' onclick=digitPressed(8)>8</button></td>
+            <td><button class='number' onclick=digitPressed(9)>9</button></td>
+            <td><button class='operator' onclick='opPressed("add")'>+</button></td>
+        </tr>
+        <tr>
+            <td><button class='number' onclick=digitPressed(4)>4</button></td>
+            <td><button class='number' onclick=digitPressed(5)>5</button></td>
+            <td><button class='number' onclick=digitPressed(6)>6</button></td>
+            <td><button class='operator' onclick='opPressed("subtract")'>-</button></td>
+        </tr>
+        <tr>
+            <td><button class='number' onclick=digitPressed(1)>1</button></td>
+            <td><button class='number' onclick=digitPressed(2)>2</button></td>
+            <td><button class='number' onclick=digitPressed(3)>3</button></td>
+            <td><button class='operator' onclick='opPressed("multiply")'>*</button></td>
+        </tr>
+        <tr>
+            <td><button class='operator' onclick='opPressed("clear")'>C</button></td>
+            <td><button class='number' onclick=digitPressed(0)>0</button></td>
+            <td><button class='operator' onclick='opPressed("equals")'>=</button></td>
+            <td><button class='operator' onclick='opPressed("divide")'>/</button></td>
+        </tr>
+
+
+        
+    </table>
+    <!-- Since we need to click on the numbers and operators,
+       what tag should we use for them? -->
+    <!-- How should we stylistically differentiate between numbers,
+       operators, and the result? -->
+  </body>
+</html>

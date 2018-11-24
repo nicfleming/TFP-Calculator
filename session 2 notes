@@ -1,0 +1,19 @@
+you need meta and title tag in head
+@media rule used to define different style rules for different devices
+QA homework- pick a simple object and answer:
+what is the best use you get out of it
+how can you make it better
+what is the pertinent most common defect you run into
+
+See notes in bottom of QA slides
+
+paper towel holder
+holds paper towels
+most common defect is i can't get a paper towel with one hand- either get the whole roll wet/dirty
+I would add something to create more resistance to rotating the roll so that i can tear off a paper towel with one hand
+
+
+follow up for week two
+going forward, what kind of testing do you think would be needed,
+where do you start when you start to think of these kinds of improvements
+how many different ways can you break it

@@ -1,0 +1,69 @@
+body {
+    /* What high level styles should we apply to the entire body? */
+    font-size: 2em;
+    font-family: monospace;
+    background-color: pink;
+  }
+  /* What should my selector be to get the results box? */
+  #result{
+    background-color: black;
+    color: white;
+    text-align: right;
+    border: 3px dotted red;
+    padding: 5px;
+    margin: 5px;
+    font-size: 3em;
+}
+    /* How can I align the text to the right? */
+    /* How can I set a background color? */
+    /* How can I give my box a special border */
+    /* How can I make the text bigger? */
+    /* Lets give the numbers some room inside the result box */
+  
+  
+  /* What should I use to apply a style to all buttons? */
+  button{
+      border-radius: 10px;
+      padding: 5px;
+      margin: 5px;
+      border: 1px solid green;
+      height: 80px;
+      width: 80px;
+      text-align: center;
+  }
+    /* Can we make the buttons have curves? */
+    /* Lets make the text bigger */
+    /* Lets provide a border to all of the buttons */
+    /* Lets give the numbers and operators some space */
+  
+  /* Now lets make numbers and operators be different colored buttons.
+      Lets also make the color change when we hover over the buttons. */
+      
+      /* What should my selector be to get all number buttons? */
+.number{
+     background-color: grey;
+     font-size: 2em;
+     
+}
+  /* What should my selector be to get all the number buttons being hovered over? */
+  /* What should my selector be to get all the operator buttons being hovered over? */
+.number:hover{
+    background-color: purple;
+}
+  /* What should my selector be to get all the operator buttons? */
+.operator{
+    color: white;
+    background-color: darkslategray;;
+    font-size: 2em;
+}
+.operator:hover{
+    background-color:green;
+}
+
+  
+  
+  
+  
+  /* Lets change all of the number button colors only if the screen is small */
+
+  
