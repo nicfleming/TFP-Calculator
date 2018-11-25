@@ -45,12 +45,14 @@ function init() {
         document.newValue = number;
     } else {
     // otherwise
+        console.log('document.newValue: ' + document.newValue);
         console.log('number pressed: ' + number);
       // what math do we need to perform to add a new number in the ones place?
         var newVal = number; 
       // should we prevent a number from being above or below any certain values?
         if (number < -100000 || number > 100000){
             newVal = 'Number too large!';
+            return;
         }
       // set the document new value to our computer newVal
         document.newValue = newVal;
@@ -63,15 +65,20 @@ function init() {
   // this function triggers the computation of the value when
   // an operator is selected
   function opPressed(operator) {
+      if (operator == 'C'){
+          init();
+          console.log('clear');
+          return;
+      }
     // check to see if it's a repeatHitOp
-    if (operator != document.prevOp) {
+    if (document.repeatHitOp) {
       // set the prevOp to the new operator pressed
         document.prevOp = operator;
       // do nothing since we're just changing the operation
-  
+        return;
     }
     // set repeatHitOp to be true
-    repeatHitOp = true;
+    document.repeatHitOp = true;
     //  initialize the result variable
     var result;
     // put oldValue and newValue into smaller variables for ease of writing
@@ -79,39 +86,47 @@ function init() {
     var newV = document.newValue;
     // create a switch statement to determine the math to perform based on the previous operator
     // this is because if we do 1 + 2 and then press *, we need to multiply by the result of 1 + 2
-    switch(operator) {
-      // case for +
-      case "add" :
+    switch(document.prevOp) {
+        // case for +
+      case "+" :
         // set result to addition of prev and next and then break
         result = oldV + newV;
         console.log('added: ' + result);
         break;
       // case for -
-      case "subtract" :
+      case "-" :
         // set result to subtraction of next from prev and then break
         result = oldV - newV;
         console.log('subtracted: ' + result);
         break;
        // case for * 
-      case 'multiply':
+      case '*':
         // set result to product of next and prev and then break
         result = oldV * newV;
         console.log('multiplied: ' + result);
         break;
       // case for / 
-      case 'divide':
+      case '/':
         // set result to dividend of next into prev then break;
-        result = oldV / newV;
+        if(newV == 0){
+            alert("Can't divide by 0");
+            init();
+            break;
+        }
+        result = Math.floor(oldV/newV);
         console.log('divided: ' + result);
         break;
       // default case (=)
       default:
         // do nothing
+        console.log('do nothing');
+        document.prevOp = operator;
         return;
     }
     // result beyond our extreme values?
     if (result > 100000 || result < -1000000){
         result = 'Result is too large!';
+        return;
     }
     // set oldValue to be our result
     document.oldValue = result;
@@ -120,7 +135,7 @@ function init() {
     // set the prevOp to be the given operator
     document.prevOp = operator;
     // update the result with our function from above with the result
-    updateResult(result);
+    updateResult(document.oldValue);
   }
   // still need- operators don't work
   // when i click two numbers the second one just replaces the old one
